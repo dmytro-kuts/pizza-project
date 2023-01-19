@@ -25,7 +25,7 @@ body {
 
   &__items {
     display: grid;
-    grid-template: auto / repeat(auto-fit, minmax(260px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));
     justify-items: center;
     column-gap: 20px;
     row-gap: 40px;
