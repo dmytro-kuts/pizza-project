@@ -1,0 +1,44 @@
+.root {
+  position: relative;
+}
+.icon_search {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translate(0px, -50%);
+  height: 24px;
+  width: 24px;
+  opacity: 0.3;
+}
+.icon_remove {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translate(0px, -50%);
+  height: 24px;
+  width: 24px;
+  opacity: 0.3;
+  transition: opacity 0.3s ease 0s;
+  cursor: pointer;
+  @media (any-hover: hover){
+    &:hover{
+      opacity: 0.5;
+    }
+  }
+}
+.input {
+  font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 12px 46px;
+  border-radius: 15px;
+  width: 420px;
+  &::placeholder {
+    transition: color 0.3s ease 0s;
+  }
+  &:focus {
+    border-color: rgba(0, 0, 0, 0.2);
+    &::placeholder {
+      color: transparent;
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.root {
+  margin-top: 40px;
+  display: flex;
+  gap: 10px;
+  
+  :global {
+    .previous{}
+
+    .selected {
+      transition: all 0.3s ease 0s;
+      background-color: #fe5f1e;
+      a {
+        color: white;
+      }
+    }
+    .next {
+
+    }
+  }
+  li { 
+    border-radius: 50%;
+    
+    a {
+      text-align: center;
+      display: block;
+      width: 32.67px;
+      font-weight: 700;
+      padding: 5px;
+      border-radius: 50%;
+      border: 1px solid #fe5f1e;
+      color: #fe5f1e;
+      cursor: pointer;
+      transition: all 0.3s ease 0s;
+      @media (any-hover: hover){
+        &:hover{
+          background-color: #fe5f1e;
+          color: #fff;
+        }
+      }
+    }
+  }
+}

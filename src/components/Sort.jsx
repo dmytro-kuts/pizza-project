@@ -2,12 +2,12 @@ import React, { useState } from 'react';
 
 function Sort({ sortValue, onChangeSort }) {
   const [open, setOpen] = useState(false);
-  // const [selected, setSelected] = useState(0);
+
   const list = [
     { name: 'популярності зменш.', sortProperty: 'rating' },
     { name: 'популярності збільш.', sortProperty: '-rating' },
-    { name: 'ціни зменш.', sortProperty: 'price' },
-    { name: 'ціни збільш.', sortProperty: '-price' },
+    { name: 'зменш. ціни', sortProperty: 'price' },
+    { name: 'збільш. ціни', sortProperty: '-price' },
     { name: 'алфавіту зменш.', sortProperty: 'title' },
     { name: 'алфавіту збільш.', sortProperty: '-title' },
   ];
