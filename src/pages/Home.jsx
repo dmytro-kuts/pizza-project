@@ -5,8 +5,11 @@ import Sort from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
+import { SearchContext } from '../App';
 
-const Home = ({ searchValue }) => {
+const Home = () => {
+  const { searchValue } = React.useContext(SearchContext);
+
   const [pizzasItem, setPizzasItem] = useState([]);
   const [isloading, setIsLoading] = useState(true);
   const [categoryId, setCategoryId] = useState(0);
@@ -50,7 +53,7 @@ const Home = ({ searchValue }) => {
       </div>
       <h2 className="content__title">Усі піци</h2>
       <div className="content__items">{isloading ? skeletons : items}</div>
-      <Pagination onCangePage={number => setCurrentPage(number)} />
+      <Pagination onCangePage={(number) => setCurrentPage(number)} />
     </>
   );
 };
