@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { setCategoryId } from '../redux/slices/filterSlice';
+import { setCategoryId, setCurrentPage } from '../redux/slices/filterSlice';
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
@@ -13,17 +13,20 @@ import { SearchContext } from '../App';
 
 const Home = () => {
   const dispatch = useDispatch();
-  const { categoryId, sort } = useSelector((state) => state.filter);
+  const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
 
   const { searchValue } = React.useContext(SearchContext);
 
   const [pizzasItem, setPizzasItem] = useState([]);
   const [isloading, setIsLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
 
   const onCangeCategory = (id) => {
     dispatch(setCategoryId(id));
   };
+
+  const onChangePage = (number) => {
+    dispatch(setCurrentPage(number));
+  }
 
   useEffect(() => {
     setIsLoading(true);
@@ -40,7 +43,8 @@ const Home = () => {
       .then((res) => {
         setPizzasItem(res.data);
         setIsLoading(false);
-      })
+      });
+
     window.scrollTo(0, 0);
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
@@ -55,7 +59,7 @@ const Home = () => {
       </div>
       <h2 className="content__title">Усі піци</h2>
       <div className="content__items">{isloading ? skeletons : items}</div>
-      <Pagination onCangePage={(number) => setCurrentPage(number)} />
+      <Pagination currentPage={currentPage} onChangePage={onChangePage} />
     </>
   );
 };

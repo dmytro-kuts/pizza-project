@@ -1,6 +1,6 @@
 import './scss/app.scss';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header';
@@ -11,7 +11,7 @@ import Cart from './pages/Cart';
 export const SearchContext = React.createContext();
 
 function App() {
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = React.useState('');
 
   return (
     <>
