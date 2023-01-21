@@ -8,6 +8,10 @@ import removeSvg from '../../assets/img/remove.svg';
 const Search = () => {
   const { searchValue, setSearchValue } = React.useContext(SearchContext);
 
+  const onClickClear = () => {
+    
+  }
+
   return (
     <div className={styles.root}>
       <img className={styles.icon_search} src={searchSvg} alt="Search icon" />

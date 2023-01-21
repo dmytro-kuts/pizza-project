@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { useSelector, useDispatch } from 'react-redux';
+
+import { setCategoryId } from '../redux/slices/filterSlice';
 
 import Categories from '../components/Categories';
 import Sort from '../components/Sort';
@@ -8,39 +12,37 @@ import Pagination from '../components/Pagination';
 import { SearchContext } from '../App';
 
 const Home = () => {
+  const dispatch = useDispatch();
+  const { categoryId, sort } = useSelector((state) => state.filter);
+
   const { searchValue } = React.useContext(SearchContext);
 
   const [pizzasItem, setPizzasItem] = useState([]);
   const [isloading, setIsLoading] = useState(true);
-  const [categoryId, setCategoryId] = useState(0);
   const [currentPage, setCurrentPage] = useState(1);
-  const [sortType, setSortType] = useState({
-    name: 'популярності',
-    sortProperty: 'rating',
-  });
+
+  const onCangeCategory = (id) => {
+    dispatch(setCategoryId(id));
+  };
 
   useEffect(() => {
     setIsLoading(true);
 
+    const sortBy = sort.sortProperty.replace('-', '');
+    const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
     const category = categoryId > 0 ? `&category=${categoryId}` : '';
-    const sortBy = sortType.sortProperty.replace('-', '');
-    const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc';
     const search = searchValue ? `&search=${searchValue}` : '';
 
-    fetch(
-      `https://63c4ef9df3a73b34784a9eda.mockapi.io/react-pizza?page=${currentPage}&limit=4${category}&sortBy=${sortBy}&order=${order}${search}`,
-    )
-      .then((res) => res.json())
-      .then((json) => {
-        setPizzasItem(json);
+    axios
+      .get(
+        `https://63c4ef9df3a73b34784a9eda.mockapi.io/react-pizza?page=${currentPage}&limit=4${category}&sortBy=${sortBy}&order=${order}${search}`,
+      )
+      .then((res) => {
+        setPizzasItem(res.data);
         setIsLoading(false);
       })
-      .catch((err) => {
-        console.warn(err);
-        alert('Помилка при отриманні данних');
-      });
     window.scrollTo(0, 0);
-  }, [categoryId, sortType, searchValue, currentPage]);
+  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
   const skeletons = [...new Array(6)].map((_, i) => <Skeleton key={i} />);
   const items = pizzasItem.map((obj) => <PizzaBlock {...obj} key={obj.id} />);
@@ -48,8 +50,8 @@ const Home = () => {
   return (
     <>
       <div className="content__top">
-        <Categories catValue={categoryId} onCangeCategory={(i) => setCategoryId(i)} />
-        <Sort sortValue={sortType} onChangeSort={(i) => setSortType(i)} />
+        <Categories catValue={categoryId} onCangeCategory={onCangeCategory} />
+        <Sort />
       </div>
       <h2 className="content__title">Усі піци</h2>
       <div className="content__items">{isloading ? skeletons : items}</div>
