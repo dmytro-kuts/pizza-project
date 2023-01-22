@@ -14,6 +14,7 @@ export const list = [
 function Sort() {
   const dispatch = useDispatch();
   const sort = useSelector((state) => state.filter.sort);
+  const sortRef = React.useRef();
 
   const [open, setOpen] = React.useState(false);
 
@@ -22,8 +23,20 @@ function Sort() {
     setOpen(false);
   };
 
+  React.useEffect(() => {
+    const handelClickOutside = (event) => {
+      if (!event.composedPath().includes(sortRef.current)) {
+        setOpen(false);
+      }
+    };
+
+    document.body.addEventListener('click', handelClickOutside);
+
+    return () => document.body.removeEventListener('click', handelClickOutside);
+  }, []);
+
   return (
-    <div className="sort">
+    <div ref={sortRef} className="sort">
       <div className={`sort__label ${open ? 'show' : ''}`}>
         <b>Сортування за:</b>
         <button onClick={() => setOpen(!open)}>

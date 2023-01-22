@@ -52,32 +52,7 @@ const Home = () => {
       });
   };
 
-  React.useEffect(() => {
-    if (window.location.search) {
-      const params = qs.parse(window.location.search.substring(1));
-      
-      const sort = list.find((obj) => obj.sortProperty === params.sortProperty);
-
-      dispatch(
-        setFilters({
-          ...params,
-          sort,
-        }),
-      );
-      isSearch.current = true;
-    }
-  }, []);
-
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-
-    if (!isSearch.current) {
-      fetchPizzas();
-    }
-
-    isSearch.current = false;
-  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
-
+  // Якщо змінили параметри та був перший рендер
   React.useEffect(() => {
     if (isMounted.current) {
       const queryString = qs.stringify({
@@ -92,7 +67,35 @@ const Home = () => {
     isMounted.current = true;
   }, [categoryId, sort.sortProperty, currentPage]);
 
-  const skeletons = [...new Array(6)].map((_, i) => <Skeleton key={i} />);
+  // Якщо був перший рендер то перевіряєм URL-параметри, та зберігаєм в redux
+  React.useEffect(() => {
+    if (window.location.search) {
+      const params = qs.parse(window.location.search.substring(1));
+
+      const sort = list.find((obj) => obj.sortProperty === params.sortProperty);
+
+      dispatch(
+        setFilters({
+          ...params,
+          sort,
+        }),
+      );
+      isSearch.current = true;
+    }
+  }, []);
+
+  // Якщо був перший рендер то запрашиваєм піци
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+
+    if (!isSearch.current) {
+      fetchPizzas();
+    }
+
+    isSearch.current = false;
+  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
+
+  const skeletons = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
 
   const items = pizzasItem.map((obj) => <PizzaBlock {...obj} key={obj.id} />);
 
