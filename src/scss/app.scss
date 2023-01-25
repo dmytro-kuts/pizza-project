@@ -10,7 +10,7 @@ body {
 .wrapper {
   width: calc(100vw - 100px);
   height: 100%;
-  background-color: #fff;
+  background: #fff;
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1440px;
@@ -18,25 +18,33 @@ body {
 
 .content {
   padding: 40px 0;
-
-  &__title {
-    margin: 35px 0;
-  }
-
-  &__items {
-    display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));
-    justify-items: center;
-    column-gap: 20px;
-    row-gap: 40px;
-  }
-
   &__top {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+  }
+  &__title {
+    margin: 35px 0;
+  }
+  &__error-info {
+    text-align: center;
+    margin: 60px auto;
+    h2 {
+      font-weight: 700;
+      font-size: 30px;
+    }
+    p {
+      font-size: 26px;
+    }
+  }
+  &__items {
+    display: grid;
+    grid-template: auto / repeat(auto-fill, minmax(260px, 1fr));
+    justify-items: center;
+    column-gap: 20px;
+    row-gap: 40px;
   }
 }
 
