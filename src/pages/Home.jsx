@@ -11,7 +11,6 @@ import Sort, { list } from '../components/Sort';
 import PizzaBlock from '../components/PizzaBlock';
 import Skeleton from '../components/PizzaBlock/Skeleton';
 import Pagination from '../components/Pagination';
-import { SearchContext } from '../App';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -20,9 +19,7 @@ const Home = () => {
   const isMounted = React.useRef(false);
 
   const { items, status } = useSelector((state) => state.pizzas);
-  const { categoryId, sort, currentPage } = useSelector((state) => state.filter);
-
-  const { searchValue } = React.useContext(SearchContext);
+  const { categoryId, sort, currentPage, searchValue } = useSelector((state) => state.filter);
 
   const onCangeCategory = (id) => {
     dispatch(setCategoryId(id));
@@ -92,7 +89,7 @@ const Home = () => {
 
   const skeletons = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
 
-  const pizzasItems = items.map((obj) => <PizzaBlock {...obj} key={obj.id} />);
+  const pizzasItems = items.map((obj) => <PizzaBlock key={obj.id} {...obj} />);
 
   return (
     <>

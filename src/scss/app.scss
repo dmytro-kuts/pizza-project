@@ -8,12 +8,14 @@ body {
 }
 
 .wrapper {
-  width: calc(100vw - 100px);
   height: 100%;
   background: #fff;
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1440px;
+  @media (max-width: 1440px){
+    margin: 0 auto;
+  }
 }
 
 .content {
