@@ -1,7 +1,9 @@
 @import '../variables';
 
 .button {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background-color: $orange;
   border-radius: 30px;
   padding: 10px 20px;
@@ -45,11 +47,16 @@
   }
 
   &--black {
-    background-color: $black;
-
-    &:hover,
-    &:active {
-      background-color: lighten($color: $black, $amount: 10);
+    background-color: #282828;
+    transition: all 0.3s ease 0s;
+    @media (any-hover: hover){
+      &:hover{
+        background-color: #ffffff;
+        span {
+          color: #282828;
+        }
+        
+      }
     }
   }
 

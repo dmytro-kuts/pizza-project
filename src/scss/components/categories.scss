@@ -8,7 +8,7 @@
     gap: 20px;
 
     li {
-      background-color: #f9f9f9;
+      background-color: #787878;
       padding: 13px 30px;
       border-radius: 30px;
       font-weight: bold;
@@ -17,11 +17,11 @@
       @include noselect();
 
       &:hover {
-        background-color: darken(#f9f9f9, 2%);
+        background-color: darken(#787878, 2%);
       }
 
       &:active {
-        background-color: darken(#f9f9f9, 5%);
+        background-color: darken(#787878, 5%);
       }
 
       &.active {

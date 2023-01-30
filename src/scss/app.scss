@@ -4,17 +4,28 @@
 @import './components/all';
 
 body {
-  background-color: $background;
+  background: linear-gradient(rgba(36, 36, 36, 0.7), rgba(0, 0, 0, 0.8)), url(../assets/img/bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
 }
 
 .wrapper {
+  z-index: 2;
   height: 100%;
-  background: #fff;
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1440px;
-  @media (max-width: 1440px){
+  background: linear-gradient(rgba(36, 36, 36, 0.7), rgba(0, 0, 0, 0.8)),
+    url(../assets/img/bg-prod.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: top;
+  @media (max-width: 1440px) {
     margin: 0 auto;
+    border-radius: 0px;
   }
 }
 
@@ -85,7 +96,7 @@ body {
       height: 30px;
       margin-right: 10px;
       path {
-        stroke: $black;
+        stroke: $wite;
         stroke-width: 1.9;
       }
     }
@@ -304,7 +315,7 @@ body {
       font-size: 18px;
       line-height: 145.4%;
       letter-spacing: 0.01em;
-      color: #777777;
+      color: #e6e6e6;
     }
 
     icon {

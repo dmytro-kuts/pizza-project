@@ -7,6 +7,7 @@
     align-items: center;
 
     svg {
+      
       transform: rotate(-180deg);
       transition: transform 0.4s ease 0s;
       margin-left: 8px;
@@ -39,13 +40,14 @@
   }
 
   &__popup {
+    z-index: 10;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.4s ease 0s;
     position: absolute;
     right: 0;
     margin-top: 15px;
-    background: #ffffff;
+    background: #787878;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.09);
     border-radius: 10px;
     overflow: hidden;
@@ -62,7 +64,7 @@
 
         &.active,
         &:hover {
-          background: rgba(254, 95, 30, 0.05);
+          background: rgba(0, 0, 0, 0.5);
         }
 
         &.active {

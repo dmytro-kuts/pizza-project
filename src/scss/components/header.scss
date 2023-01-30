@@ -14,13 +14,14 @@
 
   &__logo {
     display: flex;
-
+    transition: transform 0.3s ease 0s;
     img {
       margin-right: 15px;
+      transition: transform 0.3s ease 0s;
     }
 
     h1 {
-      color: #181818;
+      color: #ffffff;
       font-size: 24px;
       letter-spacing: 1%;
       text-transform: uppercase;
@@ -28,7 +29,14 @@
     }
 
     p {
-      color: #7b7b7b;
+      color: #cfcfcf;
+    }
+    @media (any-hover: hover){
+      &:hover{
+        img {
+          transform: translate(0px,-4px);
+        }
+      }
     }
   }
 
