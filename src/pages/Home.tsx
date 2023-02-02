@@ -67,9 +67,6 @@ const Home: React.FC = () => {
 
       navigate(`?${queryString}`);
     }
-    if (!window.location.search) {
-      dispatch(fetchPizzas({} as SearchPizzaParams));
-    }
     isMounted.current = true;
   }, [categoryId, sort.sortProperty, currentPage]);
 

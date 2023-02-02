@@ -96,7 +96,6 @@ const Cart: React.FC = () => {
                 strokeLinejoin="round"
               />
             </svg>
-
             <span>Очистити корзину</span>
           </div>
         </div>
