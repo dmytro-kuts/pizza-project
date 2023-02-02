@@ -1,15 +1,14 @@
 import React from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import axios from 'axios';
-
 
 import styles from './FullPizza.module.scss';
 
 const FullPizza: React.FC = () => {
   const [pizza, setPizza] = React.useState<{
-    imageUrl:string;
-    title:string;
-    price:number;
+    imageUrl: string;
+    title: string;
+    price: number;
   }>();
   const { id } = useParams();
   const navigate = useNavigate();
@@ -30,7 +29,7 @@ const FullPizza: React.FC = () => {
   }, []);
 
   if (!pizza) {
-    return  <> 'Завантаження.....'</>;
+    return <>Завантаження.....</>;
   }
 
   return (
@@ -39,7 +38,10 @@ const FullPizza: React.FC = () => {
         <img src={pizza.imageUrl} alt={pizza.title} />
       </div>
       <h2>{pizza.title}</h2>
-      <h4>{pizza.price} ₴</h4>
+      <h4>від {pizza.price} ₴</h4>
+      <Link to={'/'} className="button button--outline button--add" >
+        <span>На головну</span>
+      </Link>
     </div>
   );
 };

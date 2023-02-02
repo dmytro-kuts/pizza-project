@@ -1,16 +1,16 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
-import Header from './Header';
+import Header from '../components/Header';
 
 const MainLayout: React.FC = () => {
   return (
     <div className="wrapper">
       <Header />
-      <div className="content">
+      <main className="content">
         <div className="container">
-          <Outlet/>
+          <Outlet />
         </div>
-      </div>
+      </main>
     </div>
   );
 };

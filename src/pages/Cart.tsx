@@ -5,12 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import CartItem from '../components/CartItem';
 import CartEmpty from '../components/CartEmpty';
 import { clearItem } from '../redux/slices/cartSlice';
+import { RootState } from '../redux/store';
 
-const Cart = () => {
+const Cart: React.FC = () => {
   const dispatch = useDispatch();
-  const { totalPrice, items } = useSelector((state) => state.cart);
+  const { totalPrice, items } = useSelector((state: RootState) => state.cart);
 
-  const totalCount = items.reduce((sum, item) => sum + item.count, 0);
+  const totalCount = items.reduce((sum: number, item) => sum + item.count, 0);
 
   const onClickClear = () => {
     if (window.confirm('Очистити корзину?')) {
@@ -19,7 +20,7 @@ const Cart = () => {
   };
 
   if (!totalPrice) {
-    return <CartEmpty/>
+    return <CartEmpty />;
   }
 
   return (
@@ -100,7 +101,7 @@ const Cart = () => {
           </div>
         </div>
         <div className="content__items">
-          {items.map((item) => (
+          {items.map((item: any) => (
             <CartItem key={item.id} {...item} />
           ))}
         </div>
@@ -132,7 +133,6 @@ const Cart = () => {
                   strokeLinejoin="round"
                 />
               </svg>
-
               <span>Повернутися назад</span>
             </Link>
             <div className="button pay-btn">

@@ -2,12 +2,11 @@ import React from 'react';
 
 type CategoriesProps = {
   catValue: number;
-  onCangeCategory: any;
-}
+  onCangeCategory: (i: number) => void;
+};
+const categories = ['Всі', "М'ясні", 'Гриль', 'Гострі', 'Закриті', 'Вегетаріанська'];
 
-const Categories: React.FC <CategoriesProps> = ({ catValue, onCangeCategory }) => {
-  const categories = ['Всі', "М'ясні", 'Вегетаріанська', 'Гриль', 'Гострі', 'Закриті'];
-
+const Categories: React.FC<CategoriesProps> = React.memo(({ catValue, onCangeCategory }) => {
   return (
     <div className="categories">
       <ul>
@@ -19,6 +18,6 @@ const Categories: React.FC <CategoriesProps> = ({ catValue, onCangeCategory }) =
       </ul>
     </div>
   );
-}
+});
 
 export default Categories;
