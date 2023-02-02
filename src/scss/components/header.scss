@@ -5,11 +5,16 @@
   padding: 40px 0;
 
   .container {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
     gap: 20px;
+    @media (min-width: 670.98px) {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (max-width: 670.98px) {
+      display: grid;
+    }
   }
 
   &__logo {
@@ -31,13 +36,12 @@
     p {
       color: #cfcfcf;
     }
-    @media (any-hover: hover){
-      &:hover{
+    @media (any-hover: hover) {
+      &:hover {
         img {
-          transform: translate(0px,-4px);
+          transform: translate(0px, -4px);
         }
       }
     }
   }
-
 }

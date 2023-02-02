@@ -1,6 +1,6 @@
 .root {
   position: relative;
-  
+
 }
 .icon_search {
   position: absolute;
@@ -32,8 +32,8 @@
   font-size: 18px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   padding: 12px 46px;
-  border-radius: 15px;
-  width: 420px;
+  border-radius: 30px;
+  width: 100%;
   background-color: rgb(176, 176, 176);
   &::placeholder {
     color: #fff;
@@ -45,8 +45,8 @@
       color: transparent;
     }
   }
-  @media (max-width: 467.98px){
-    width: 100%;
-  }
+  // @media (max-width: 536.98px){
+  //   width: 100%;
+  // }
 }
 
