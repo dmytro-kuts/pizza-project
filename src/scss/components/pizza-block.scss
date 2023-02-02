@@ -7,9 +7,9 @@
     width: 260px;
     transition: transform 0.3s ease 0s;
     cursor: pointer;
-    @media (any-hover: hover){
-      &:hover{
-        transform: translate(0px,-5px);
+    @media (any-hover: hover) {
+      &:hover {
+        transform: translate(0px, -3px);
       }
     }
   }

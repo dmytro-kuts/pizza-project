@@ -243,14 +243,17 @@ body {
       }
 
       svg {
+        
         transform: rotate(45deg);
 
         path {
+          
           fill: darken($color: $gray-line, $amount: 15);
         }
       }
 
       .button {
+        transition: background-color 0.2s ease 0s;
         svg {
           width: 11.5px;
           height: 11.5px;
@@ -374,7 +377,7 @@ body {
       color: #e6e6e6;
     }
 
-    icon {
+    span {
       position: relative;
       top: 2px;
     }
