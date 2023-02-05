@@ -145,7 +145,8 @@
     justify-content: center;
     line-height: 23px;
     padding: 12px 25px;
-
+    max-width: rem(280);
+    margin: 0 auto;
     svg {
       margin-right: 8px;
       margin-bottom: 1px;

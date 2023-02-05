@@ -12,8 +12,6 @@ body {
 }
 
 .wrapper {
-  z-index: 2;
-  height: 100%;
   margin: 50px auto;
   border-radius: 10px;
   max-width: 1440px;
@@ -23,6 +21,21 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: top;
+  min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+  @supports (overflow: clip) {
+    overflow: clip;
+  }
+  // Притискаємо footer
+  > main {
+    flex: 1 1 auto;
+  }
+  // Фікс для слайдерів
+  > * {
+    min-width: 0;
+  }
   @media (max-width: 1440px) {
     margin: 0 auto;
     border-radius: 0px;
@@ -30,13 +43,15 @@ body {
 }
 
 .content {
-  padding: 40px 0;
+  @include adaptiveValue("padding-top", 40, 20);
+  @include adaptiveValue("padding-bottom", 40, 20);
   &__top {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 40px;
+    row-gap: rem(15);
+    column-gap: rem(40);
   }
   &__title {
     margin: 35px 0;
@@ -62,9 +77,6 @@ body {
 }
 
 .container {
-  width: $container-width;
-  margin: 0 auto;
-
   &--cart {
     max-width: 820px;
     margin: 90px auto;

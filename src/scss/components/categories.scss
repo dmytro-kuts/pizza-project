@@ -1,11 +1,19 @@
 @import '../variables';
 
 .categories {
+  
+  @media (max-width:$mobile){
+    overflow: auto;
+    margin: rem(0) rem(-15);
+    padding-right: rem(15);
+    padding-left: rem(15);
+    padding-bottom: rem(14);
+  }
+
   ul {
     display: flex;
-    flex-wrap: wrap;
     align-items: center;
-    gap: 20px;
+    gap: rem(10);
 
     li {
       background-color: #787878;
