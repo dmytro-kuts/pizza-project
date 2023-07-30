@@ -22,19 +22,24 @@ const Search: React.FC = () => {
   };
 
   const updateSearchValue = React.useCallback(
-    debounce((value: string) => {
+    (value: string) => {
       dispatch(setSearchValue(value));
-    }, 250),
-    [],
+    },
+    [dispatch],
+  );
+
+  const debouncedUpdateSearchValue = React.useMemo(
+    () => debounce(updateSearchValue, 250),
+    [updateSearchValue],
   );
 
   const onChangeInput = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value);
-    updateSearchValue(event.target.value);
+    debouncedUpdateSearchValue(event.target.value);
   };
 
   return (
-    <div className={styles.root} >
+    <div className={styles.root}>
       <img className={styles.icon_search} src={searchSvg} alt="Search icon" />
       <input
         ref={inputRef}

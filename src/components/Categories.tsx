@@ -8,7 +8,7 @@ const categories = ['Всі', "М'ясні", 'Гриль', 'Гострі', 'За
 
 const Categories: React.FC<CategoriesProps> = React.memo(({ catValue, onCangeCategory }) => {
   return (
-    <div className="categories">
+    <nav className="categories">
       <ul>
         {categories.map((categoryName, i) => (
           <li key={i} onClick={() => onCangeCategory(i)} className={catValue === i ? 'active' : ''}>
@@ -16,7 +16,7 @@ const Categories: React.FC<CategoriesProps> = React.memo(({ catValue, onCangeCat
           </li>
         ))}
       </ul>
-    </div>
+    </nav>
   );
 });
 

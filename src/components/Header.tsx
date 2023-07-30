@@ -23,13 +23,13 @@ function Header() {
   }, [items]);
 
   return (
-    <div className="header">
-      <div className="container">
-        <Link to="/">
+    <header className="header">
+      <div className="header__container">
+        <Link to="./">
           <div className="header__logo">
-            <img width="38" src={logoSvg} alt="Pizza logo" />
+            <img src={logoSvg} alt="Pizza logo" />
             <div>
-              <h1>React Pizza</h1>
+              <h1>Pizza</h1>
               <p>Найсмачніша піца у всесвіті</p>
             </div>
           </div>
@@ -44,7 +44,7 @@ function Header() {
           </Link>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

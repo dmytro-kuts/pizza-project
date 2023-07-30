@@ -17,12 +17,12 @@
 
     li {
       background-color: #787878;
-      padding: 10px 20px;
-      border-radius: 30px;
+      padding: rem(10) rem(20);
+      border-radius: rem(30);
       font-weight: bold;
       cursor: pointer;
       transition: background-color 0.1s ease-in-out;
-      @include noselect();
+   
 
       &:hover {
         background-color: darken(#787878, 2%);

@@ -1,18 +1,18 @@
 @import '../variables';
 
 .header {
-  border-bottom: 1px solid $gray-line;
-  padding: 40px 0;
+  border-bottom: rem(1) solid $gray-line;
+  padding: rem(40) 0;
 
-  .container {
-    gap: 20px;
-    @media (min-width: 670.98px) {
+  &__container {
+    gap: rem(20);
+    @media (min-width: em(670)) {
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
     }
-    @media (max-width: 670.98px) {
+    @media (max-width: em(670)){
       display: grid;
     }
   }
@@ -21,13 +21,15 @@
     display: flex;
     transition: transform 0.3s ease 0s;
     img {
-      margin-right: 15px;
+      width: rem(40);
+      height: 100%;
+      margin-right: rem(15);
       transition: transform 0.3s ease 0s;
     }
 
     h1 {
       color: #ffffff;
-      font-size: 24px;
+      font-size: rem(24);
       letter-spacing: 1%;
       text-transform: uppercase;
       font-weight: 800;
@@ -39,7 +41,7 @@
     @media (any-hover: hover) {
       &:hover {
         img {
-          transform: translate(0px, -4px);
+          transform: translate(0px, rem(-2));
         }
       }
     }

@@ -3,12 +3,7 @@ import qs from 'qs';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
-import {
-  FilterSliceState,
-  setCategoryId,
-  setCurrentPage,
-  setFilters,
-} from '../redux/slices/filterSlice';
+import { setCategoryId, setCurrentPage, setFilters } from '../redux/slices/filterSlice';
 import { fetchPizzas, SearchPizzaParams } from '../redux/slices/pizzasSlice';
 
 import Categories from '../components/Categories';
@@ -29,32 +24,41 @@ const Home: React.FC = () => {
     (state: RootState) => state.filter,
   );
 
-  const onCangeCategory = React.useCallback((idx: number) => {
-    dispatch(setCategoryId(idx));
-  }, []);
+  const onCangeCategory = React.useCallback(
+    (idx: number) => {
+      dispatch(setCategoryId(idx));
+    },
+    [dispatch],
+  );
 
   const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
 
-  const getPizzas = () => {
-    const sortBy = sort.sortProperty.replace('-', '');
-    const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
-    const category = categoryId > 0 ? `&category=${categoryId}` : '';
-    const search = searchValue ? `&search=${searchValue}` : '';
+  React.useEffect(() => {
+    const getPizzas = () => {
+      const sortBy = sort.sortProperty.replace('-', '');
+      const order = sort.sortProperty.includes('-') ? 'asc' : 'desc';
+      const category = categoryId > 0 ? `&category=${categoryId}` : '';
+      const search = searchValue ? `&search=${searchValue}` : '';
 
-    dispatch(
-      fetchPizzas({
-        sortBy,
-        order,
-        category,
-        search,
-        currentPage: String(currentPage),
-      }),
-    );
+      dispatch(
+        fetchPizzas({
+          sortBy,
+          order,
+          category,
+          search,
+          currentPage: String(currentPage),
+        }),
+      );
 
-    window.scrollTo(0, 0);
-  };
+      window.scrollTo(0, 0);
+    };
+
+    getPizzas();
+
+    isSearch.current = false;
+  }, [categoryId, sort.sortProperty, searchValue, currentPage, dispatch]);
 
   // Якщо змінили параметри та був перший рендер
   React.useEffect(() => {
@@ -68,14 +72,7 @@ const Home: React.FC = () => {
       navigate(`?${queryString}`);
     }
     isMounted.current = true;
-  }, [categoryId, sort.sortProperty, currentPage]);
-
-  // Якщо був перший рендер то запрашиваєм піци
-  React.useEffect(() => {
-    getPizzas();
-
-    isSearch.current = false;
-  }, [categoryId, sort.sortProperty, searchValue, currentPage]);
+  }, [categoryId, sort.sortProperty, currentPage, navigate]);
 
   // Якщо був перший рендер то перевіряєм URL-параметри, та зберігаєм в redux
   React.useEffect(() => {
@@ -94,7 +91,7 @@ const Home: React.FC = () => {
       isSearch.current = true;
       isMounted.current = true;
     }
-  }, []);
+  }, [dispatch]);
 
   const skeletons = [...new Array(4)].map((_, i) => <Skeleton key={i} />);
 

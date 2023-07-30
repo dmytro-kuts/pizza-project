@@ -6,9 +6,8 @@
   justify-content: center;
   gap: 40px;
   .image {
-    padding: 0 0 60% 0;
-    width: 60%;
-    
+    padding-bottom: 60%;
+    width: 100%;
     position: relative;
     img {
       position: absolute;
@@ -16,7 +15,7 @@
       height: 100%;
       top: 0;
       left: 0;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
 

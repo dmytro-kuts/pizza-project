@@ -5,103 +5,109 @@ $background: #ffdf8c;
 $gray-line: #f6f6f6;
 $orange: #fe5f1e;
 
-
 $duration: 0.15s;
 //========================================================================================================================================================
 //Percent
 @function percent($px, $from) {
-	$result: math.div($px, $from) * 100%;
-	@return $result;
+  $result: math.div($px, $from) * 100%;
+  @return $result;
 }
 //REM
 @function rem($px) {
-	$result: math.div($px, 16) + rem;
-	@return $result;
+  $result: math.div($px, 16) + rem;
+  @return $result;
 }
 //EM
 @function em($px, $current: 16) {
-	$result: math.div($px, $current) + em;
-	@return $result;
+  $result: math.div($px, $current) + em;
+  @return $result;
 }
 
 //Currency
 @mixin currency($sym) {
-	&::after {
-		content: "#{$sym}";
-	}
+  &::after {
+    content: '#{$sym}';
+  }
 }
 
 // Grids
 @mixin gridCards($type: fit, $min: 280px, $max: 1fr, $gap: 30px) {
-	display: grid;
-	gap: $gap;
-	grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
+  display: grid;
+  gap: $gap;
+  grid-template-columns: repeat(auto-#{$type}, minmax($min, $max));
 }
 
 // Адаптивна властивість (clamp)
-@mixin adaptiveValue($property, $startSize, $minSize, $keepSize: 0, $widthFrom: $containerWidth, $widthTo: $minWidth) {
-	@if ($startSize==0) {
-		$startSize: 0.000001;
-	}
-	@if ($minSize==0) {
-		$minSize: 0.000001;
-	}
+@mixin adaptiveValue(
+  $property,
+  $startSize,
+  $minSize,
+  $keepSize: 0,
+  $widthFrom: $containerWidth,
+  $widthTo: $minWidth
+) {
+  @if ($startSize==0) {
+    $startSize: 0.000001;
+  }
+  @if ($minSize==0) {
+    $minSize: 0.000001;
+  }
 
-	// Для calc();
-	$addSize: math.div($startSize - $minSize, 16);
+  // Для calc();
+  $addSize: math.div($startSize - $minSize, 16);
 
-	@if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
-		$widthFrom: $maxWidth;
-	}
+  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+    $widthFrom: $maxWidth;
+  }
 
-	// Брейк-поїнти в EM
-	$widthFromMedia: em($widthFrom);
-	$widthToMedia: em($widthTo);
+  // Брейк-поїнти в EM
+  $widthFromMedia: em($widthFrom);
+  $widthToMedia: em($widthTo);
 
-	// Формула плаваючого значення
-	// Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
-	$slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
-	$yIntersection: -$widthTo * $slope + $minSize;
-	@if ($yIntersection==0) {
-		$yIntersection: 0.000001;
-	}
-	$flyValue: #{rem($yIntersection)}" + " #{$slope * 100}vw;
+  // Формула плаваючого значення
+  // Источник: https://css-tricks.com/linearly-scale-font-size-with-css-clamp-based-on-the-viewport/
+  $slope: math.div(($startSize - $minSize), ($widthFrom - $widthTo));
+  $yIntersection: -$widthTo * $slope + $minSize;
+  @if ($yIntersection==0) {
+    $yIntersection: 0.000001;
+  }
+  $flyValue: #{rem($yIntersection)}' + ' #{$slope * 100}vw;
 
-	// Отримання значення властивості
-	$propertyValue: #{"clamp(" rem($minSize) "," $flyValue "," rem($startSize) ")"};
-	// Якщо негативні значення
-	@if ($minSize > $startSize) {
-		$propertyValue: #{"clamp(" rem($startSize) "," $flyValue "," rem($minSize) ")"};
-	}
+  // Отримання значення властивості
+  $propertyValue: #{'clamp(' rem($minSize) ',' $flyValue ',' rem($startSize) ')'};
+  // Якщо негативні значення
+  @if ($minSize > $startSize) {
+    $propertyValue: #{'clamp(' rem($startSize) ',' $flyValue ',' rem($minSize) ')'};
+  }
 
-	// Встановлюємо значення за замовчуванням
-	@if $keepSize != 1 and $keepSize != 3 {
-		@media (min-width: $widthFromMedia) {
-			#{$property}: rem($startSize);
-		}
-	}
-	// Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
-	@media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
-		// Якщо підтримується clamp();
-		@supports (#{$property}: $propertyValue) {
-			#{$property}: $propertyValue;
-		}
-		// Якщо не підтримується clamp();
-		@supports not (#{$property}: $propertyValue) {
-			#{$property}: calc(#{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) - math.div($widthTo, 16)});
-		}
-	}
-	@if $keepSize != 1 and $keepSize != 2 {
-		@media (max-width: $widthToMedia) {
-			#{$property}: rem($minSize);
-		}
-	}
+  // Встановлюємо значення за замовчуванням
+  @if $keepSize != 1 and $keepSize != 3 {
+    @media (min-width: $widthFromMedia) {
+      #{$property}: rem($startSize);
+    }
+  }
+  // Адаптуємо розмір у проміжку між зазначеними ширинами в'юпорту
+  @media (min-width: $widthToMedia) and (max-width: $widthFromMedia) {
+    // Якщо підтримується clamp();
+    @supports (#{$property}: $propertyValue) {
+      #{$property}: $propertyValue;
+    }
+    // Якщо не підтримується clamp();
+    @supports not (#{$property}: $propertyValue) {
+      #{$property}: calc(
+        #{rem($minSize)} + #{$addSize} * (100vw - #{rem($widthTo)}) / #{math.div($widthFrom, 16) -
+          math.div($widthTo, 16)}
+      );
+    }
+  }
+  @if $keepSize != 1 and $keepSize != 2 {
+    @media (max-width: $widthToMedia) {
+      #{$property}: rem($minSize);
+    }
+  }
 }
 
 //========================================================================================================================================================
-
-// Налаштування адаптивної сітки ===============================================================================================================================================================================================================================================================================================
-
 // Мінімальна ширина сторінки
 $minWidth: 320;
 // Ширина полотна (макету)
@@ -121,49 +127,17 @@ $tablet: em(991.98); // Планшети, деякі телефони в гор�
 $mobile: em(767.98); // Телефони L
 $mobileSmall: em(479.98); // Телефони S
 
-// Тип адаптива:
-// 1 = чуйність (у контейнера немає брейкпоінтів),
-// 2 = по брейк-поїнт (контейнер змінює свою ширину по брейк-поїнт)
-$responsiveType: 1;
-
-@if ($responsiveType==1) {
-  // Чуйна
-  [class*='container'] {
-    @if ($maxWidthContainer>0) {
-      max-width: rem($containerWidth);
-      margin: 0 auto;
-    }
-    @if ($containerPadding>0) {
-      @if ($maxWidthContainer>0) {
-        padding: 0 rem(math.div($containerPadding, 2));
-      } @else {
-        @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
-        @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
-      }
-    }
-  }
-} @else {
-  // Брейк-поїнтами
-  [class*='container'] {
+[class*='__container'] {
+  @if ($maxWidthContainer>0) {
+    max-width: rem($containerWidth);
     margin: 0 auto;
+  }
+  @if ($containerPadding>0) {
     @if ($maxWidthContainer>0) {
-      max-width: rem($containerWidth);
+      padding: 0 rem(math.div($containerPadding, 2));
     } @else {
-      @if ($containerPadding>0) {
-        padding: 0 rem(math.div($containerPadding, 2));
-      }
-    }
-    @media (max-width: $pc) {
-      max-width: rem(970);
-    }
-    @media (max-width: $tablet) {
-      max-width: rem(750);
-    }
-    @media (max-width: $mobile) {
-      max-width: none;
-      @if ($containerPadding>0 and $maxWidthContainer>0) {
-        padding: 0 rem(math.div($containerPadding, 2));
-      }
+      @include adaptiveValue('padding-left', math.div($containerPadding, 2), 15);
+      @include adaptiveValue('padding-right', math.div($containerPadding, 2), 15);
     }
   }
 }

@@ -17,7 +17,7 @@ const FullPizza: React.FC = () => {
     async function fetchPizza() {
       try {
         const { data } = await axios.get(
-          'https://63c4ef9df3a73b34784a9eda.mockapi.io/react-pizza/' + id,
+          `${process.env.REACT_APP_API_URL}/api/pizzas/` + id,
         );
         setPizza(data);
       } catch (error) {
@@ -26,7 +26,7 @@ const FullPizza: React.FC = () => {
       }
     }
     fetchPizza();
-  }, []);
+  }, [navigate, id]);
 
   if (!pizza) {
     return <>Завантаження.....</>;

@@ -1,7 +1,7 @@
 [
   {
   "id": "0",
-  "imageUrl": "./assets/img/products/pizza-0.png",
+  "imageUrl": "../assets/img/products/pizza-0.webp",
   "title": "Пепероні Фреш з перцем",
   "types": [
     0,
@@ -18,7 +18,7 @@
   },
   {
   "id": "1",
-  "imageUrl": "./assets/img/products/pizza-1.png",
+  "imageUrl": "../assets/img/products/pizza-1.webp",
   "title": "Сирна",
   "types": [
     0
@@ -33,7 +33,7 @@
   },
   {
   "id": "2",
-  "imageUrl": "./assets/img/products/pizza-2.png",
+  "imageUrl": "../assets/img/products/pizza-2.webp",
   "title": "Курча барбекю",
   "types": [
     0
@@ -48,7 +48,7 @@
   },
   {
   "id": "3",
-  "imageUrl": "./assets/img/products/pizza-3.png",
+  "imageUrl": "../assets/img/products/pizza-3.webp",
   "title": "Кисло-солодке курча",
   "types": [
     1
@@ -64,7 +64,7 @@
   },
   {
   "id": "4",
-  "imageUrl": "./assets/img/products/pizza-4.png",
+  "imageUrl": "../assets/img/products/pizza-4.webp",
   "title": "Чізбургер-піца",
   "types": [
     0,
@@ -81,7 +81,7 @@
   },
   {
   "id": "5",
-  "imageUrl": "./assets/img/products/pizza-5.png",
+  "imageUrl": "../assets/img/products/pizza-5.webp",
   "title": "Крейзі пепероні",
   "types": [
     0
@@ -96,7 +96,7 @@
   },
   {
   "id": "6",
-  "imageUrl": "./assets/img/products/pizza-6.png",
+  "imageUrl": "../assets/img/products/pizza-6.webp",
   "title": "Пепероні",
   "types": [
     0,
@@ -113,7 +113,7 @@
   },
   {
   "id": "7",
-  "imageUrl": "./assets/img/products/pizza-7.png",
+  "imageUrl": "../assets/img/products/pizza-7.webp",
   "title": "Маргарита",
   "types": [
     0,
@@ -130,7 +130,7 @@
   },
   {
   "id": "8",
-  "imageUrl": "./assets/img/products/pizza-8.png",
+  "imageUrl": "../assets/img/products/pizza-8.webp",
   "title": "Чотири сезони",
   "types": [
     0,
@@ -147,7 +147,7 @@
   },
   {
   "id": "9",
-  "imageUrl": "./assets/img/products/pizza-9.png",
+  "imageUrl": "../assets/img/products/pizza-9.webp",
   "title": "Овочі та гриби 🌱",
   "types": [
     0,
@@ -164,7 +164,7 @@
   },
   {
   "id": "10",
-  "imageUrl": "./assets/img/products/pizza-10.png",
+  "imageUrl": "../assets/img/products/pizza-10.webp",
   "title": "Шинка та гриби",
   "types": [
     0,
@@ -180,7 +180,7 @@
   },
   {
   "id": "11",
-  "imageUrl": "./assets/img/products/pizza-11.png",
+  "imageUrl": "../assets/img/products/pizza-11.webp",
   "title": "Шинка та сир",
   "types": [
     0,
@@ -196,7 +196,7 @@
   },
   {
   "id": "12",
-  "imageUrl": "./assets/img/products/pizza-12.png",
+  "imageUrl": "../assets/img/products/pizza-12.webp",
   "title": "Гавайська",
   "types": [
     0,
@@ -213,7 +213,7 @@
   },
   {
   "id": "13",
-  "imageUrl": "./assets/img/products/pizza-13.png",
+  "imageUrl": "../assets/img/products/pizza-13.webp",
   "title": "Подвійне курча",
   "types": [
     0,
@@ -229,7 +229,7 @@
   },
   {
   "id": "14",
-  "imageUrl": "./assets/img/products/pizza-14.png",
+  "imageUrl": "../assets/img/products/pizza-14.webp",
   "title": "Сільська",
   "types": [
     0,
@@ -246,7 +246,7 @@
   },
   {
   "id": "15",
-  "imageUrl": "./assets/img/products/pizza-15.png",
+  "imageUrl": "../assets/img/products/pizza-15.webp",
   "title": "Домашня",
   "types": [
     0,
@@ -262,7 +262,7 @@
   },
   {
   "id": "16",
-  "imageUrl": "./assets/img/products/pizza-16.png",
+  "imageUrl": "../assets/img/products/pizza-16.webp",
   "title": "Італійська",
   "types": [
     0,
@@ -279,7 +279,7 @@
   },
   {
   "id": "17",
-  "imageUrl": "./assets/img/products/pizza-17.png",
+  "imageUrl": "../assets/img/products/pizza-17.webp",
   "title": "Ковбаски Барбекю",
   "types": [
     0,
@@ -296,7 +296,7 @@
   },
   {
   "id": "18",
-  "imageUrl": "./assets/img/products/pizza-18.png",
+  "imageUrl": "../assets/img/products/pizza-18.webp",
   "title": "М'ясна",
   "types": [
     0,
@@ -313,7 +313,7 @@
   },
   {
   "id": "19",
-  "imageUrl": "./assets/img/products/pizza-19.png",
+  "imageUrl": "../assets/img/products/pizza-19.webp",
   "title": "М'ясний мікс",
   "types": [
     0,
@@ -330,7 +330,7 @@
   },
   {
   "id": "20",
-  "imageUrl": "./assets/img/products/pizza-20.png",
+  "imageUrl": "../assets/img/products/pizza-20.webp",
   "title": "Пепероні фреш",
   "types": [
     0,
@@ -347,7 +347,7 @@
   },
   {
   "id": "21",
-  "imageUrl": "./assets/img/products/pizza-21.png",
+  "imageUrl": "../assets/img/products/pizza-21.webp",
   "title": "Курча ранч",
   "types": [
     0,
@@ -364,7 +364,7 @@
   },
   {
   "id": "22",
-  "imageUrl": "./assets/img/products/pizza-22.png",
+  "imageUrl": "../assets/img/products/pizza-22.webp",
   "title": "Чотири сири",
   "types": [
     0,
@@ -381,7 +381,7 @@
   },
   {
   "id": "23",
-  "imageUrl": "./assets/img/products/pizza-23.png",
+  "imageUrl": "../assets/img/products/pizza-23.webp",
   "title": "Чорізо фреш",
   "types": [
     0

@@ -34,7 +34,7 @@ export const fetchPizzas = createAsyncThunk<Pizza[], SearchPizzaParams>(
   async (params) => {
     const { sortBy, order, category, search, currentPage } = params;
     const { data } = await axios.get<Pizza[]>(
-      `https://63c4ef9df3a73b34784a9eda.mockapi.io/react-pizza?page=${currentPage}&limit=8${category}&sortBy=${sortBy}&order=${order}${search}`,
+      `${process.env.REACT_APP_API_URL}/api/pizzas?page=${currentPage}&limit=8${category}&sortBy=${sortBy}&order=${order}${search}`,
     );
     return data;
   },
@@ -54,7 +54,7 @@ export const pizzasSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchPizzas.pending, (state, action) => {
+    builder.addCase(fetchPizzas.pending, (state) => {
       state.status = Status.LOADING;
       state.items = [];
     });
@@ -62,7 +62,7 @@ export const pizzasSlice = createSlice({
       state.items = action.payload;
       state.status = Status.SUCCESS;
     });
-    builder.addCase(fetchPizzas.rejected, (state, action) => {
+    builder.addCase(fetchPizzas.rejected, (state) => {
       state.status = Status.ERROR;
       state.items = [];
     });

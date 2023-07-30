@@ -10,36 +10,26 @@ body {
   background-attachment: fixed;
   background-position: top;
 }
-
 .wrapper {
-  margin: 50px auto;
-  border-radius: 10px;
-  max-width: 1440px;
+  margin: rem(50) auto;
+  border-radius: rem(10);
+  max-width: rem(1440);
   background-image: url(../assets/img/bg-prod.jpg);
   min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
   @supports (overflow: clip) {
     overflow: clip;
   }
-  // Притискаємо footer
-  > main {
-    flex: 1 1 auto;
-  }
-  // Фікс для слайдерів
-  > * {
-    min-width: 0;
-  }
-  @media (max-width: 1440px) {
+  @media (max-width: rem(1440)) {
     margin: 0 auto;
-    border-radius: 0px;
+    border-radius: rem(0);
   }
 }
-
 .content {
-  @include adaptiveValue("padding-top", 40, 20);
-  @include adaptiveValue("padding-bottom", 40, 20);
+  @include adaptiveValue('padding-top', 40, 20);
+  @include adaptiveValue('padding-bottom', 40, 20);
   &__top {
     display: flex;
     flex-wrap: wrap;
@@ -49,38 +39,27 @@ body {
     column-gap: rem(40);
   }
   &__title {
-    margin: 35px 0;
+    margin: rem(35) 0;
   }
   &__error-info {
     text-align: center;
-    margin: 60px auto;
+    margin: rem(60) auto;
     h2 {
       font-weight: 700;
-      font-size: 30px;
+      font-size: rem(30);
     }
     p {
-      font-size: 26px;
+      font-size: rem(26);
     }
   }
   &__items {
     display: grid;
-    grid-template: auto / repeat(auto-fill, minmax(280px, 1fr));
+    grid-template: auto / repeat(auto-fill, minmax(rem(280), 1fr));
     justify-items: center;
-    column-gap: 20px;
-    row-gap: 40px;
+    column-gap: rem(20);
+    row-gap: rem(40);
   }
 }
-
-.container {
-  &--cart {
-    max-width: 820px;
-    margin: 90px auto;
-    .content__title {
-      margin: 0;
-    }
-  }
-}
-
 .cart {
   &__top {
     display: flex;
@@ -88,47 +67,40 @@ body {
     align-items: center;
     flex-wrap: wrap;
   }
-
   .content__items {
     display: block;
   }
   .content__title {
     display: flex;
     align-items: center;
-    font-size: 32px;
-
+    font-size: rem(32);
     svg {
       position: relative;
-      top: -2px;
-      width: 30px;
-      height: 30px;
-      margin-right: 10px;
+      top: rem(-2);
+      width: rem(30);
+      height: rem(30);
+      margin-right: rem(10);
       path {
         stroke: $wite;
         stroke-width: 1.9;
       }
     }
   }
-
   &__clear {
     display: flex;
     align-items: center;
     cursor: pointer;
-    @include noselect();
-
     span {
       display: inline-block;
-      margin-left: 7px;
+      margin-left: rem(7);
       color: #b6b6b6;
-      font-size: 18px;
+      font-size: rem(18);
     }
-
     span,
     svg,
     path {
       transition: all 0.3s ease 0s;
     }
-
     &:hover {
       svg {
         path {
@@ -140,15 +112,13 @@ body {
       }
     }
   }
-
   &__item {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(rem(120), 1fr));
+    gap: rem(20);
     border-top: 1px solid $gray-line;
-    padding-top: 30px;
-    margin-top: 30px;
-
+    padding-top: rem(30);
+    margin-top: rem(30);
     @media (max-width: 576.98px) {
     }
     &-img {
@@ -161,15 +131,15 @@ body {
         grid-row: 1 / 2;
       }
       img {
-        width: 80px;
-        height: 80px;
+        width: rem(80);
+        height: rem(80);
       }
     }
 
     &-info {
       display: flex;
       flex-direction: column;
-      align-items: start;
+      align-items: flex-start;
       justify-content: center;
       @media (max-width: 991.98px) {
         grid-row: 1 / 3;
@@ -209,7 +179,7 @@ body {
         }
         &:disabled {
           opacity: 0.4;
-          pointer-events:none;
+          pointer-events: none;
         }
       }
 
@@ -228,7 +198,7 @@ body {
       }
       @media (max-width: 576.98px) {
         grid-area: 3;
-        grid-row: 2 ;
+        grid-row: 2;
         justify-content: flex-start;
       }
       b {
@@ -250,11 +220,9 @@ body {
       }
 
       svg {
-        
         transform: rotate(45deg);
 
         path {
-          
           fill: darken($color: $gray-line, $amount: 15);
         }
       }
@@ -284,7 +252,6 @@ body {
       flex-wrap: wrap;
       justify-content: space-between;
 
-
       span {
         font-size: 22px;
 
@@ -298,19 +265,17 @@ body {
 
     &-buttons {
       display: flex;
-      gap: 20px;
+      gap: rem(20);
       flex-wrap: wrap-reverse;
       justify-content: space-between;
       margin-top: 40px;
-      
-
 
       .go-back-btn {
         display: flex;
         align-items: center;
         justify-content: center;
         width: 210px;
-        
+
         border-color: darken($color: $gray-line, $amount: 10);
         @media (max-width: 488.98px) {
           width: 100%;
@@ -320,7 +285,6 @@ body {
           color: darken($color: $gray-line, $amount: 20);
           font-weight: 500;
           font-weight: 600;
-          
         }
 
         &:hover {
@@ -340,12 +304,11 @@ body {
             fill: transparent;
             stroke-width: 2;
           }
-
         }
-        @media (any-hover: hover){
-          &:hover{
-            svg{
-              transform: translate(-6px,0px);
+        @media (any-hover: hover) {
+          &:hover {
+            svg {
+              transform: translate(-6px, 0px);
             }
           }
         }
@@ -364,21 +327,21 @@ body {
   }
 
   &--empty {
-    margin: 80px auto;
+    margin: rem(80) auto;
     text-align: center;
-    @media (max-width: 700px){
-      margin: 20px auto;
+    @media (max-width: em(700)) {
+      margin: rem(20) auto;
     }
 
     h2 {
       font-weight: 700;
-      font-size: 32px;
-      margin-bottom: 10px;
+      font-size: rem(32);
+      margin-bottom: rem(10);
       line-height: 2;
     }
 
     p {
-      font-size: 18px;
+      font-size: rem(18);
       line-height: 145.4%;
       letter-spacing: 0.01em;
       color: #e6e6e6;
@@ -391,7 +354,7 @@ body {
 
     img {
       display: block;
-      width: 300px;
+      width: rem(290);
       margin: 45px auto 60px;
     }
 
@@ -404,3 +367,4 @@ body {
     }
   }
 }
+

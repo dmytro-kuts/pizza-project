@@ -15,7 +15,15 @@ type CartItemProps = {
   count: number;
 };
 
-const CartItemBlock: React.FC<CartItemProps> = ({ id, title, type, price, size, imageUrl, count }) => {
+const CartItemBlock: React.FC<CartItemProps> = ({
+  id,
+  title,
+  type,
+  price,
+  size,
+  imageUrl,
+  count,
+}) => {
   const dispatch = useDispatch();
 
   const onClickPlus = () => {
@@ -44,7 +52,6 @@ const CartItemBlock: React.FC<CartItemProps> = ({ id, title, type, price, size, 
       <div className="cart__item-info">
         <h3>{title}</h3>
         <p>
-          {' '}
           {type} {size} см.
         </p>
       </div>
@@ -54,14 +61,14 @@ const CartItemBlock: React.FC<CartItemProps> = ({ id, title, type, price, size, 
           onClick={onClickMinus}
           className="button button--outline button--circle cart__item-count-minus"
         >
-          <PlusSvg/>
+          <PlusSvg />
         </button>
         <b>{count}</b>
         <button
           onClick={onClickPlus}
           className="button button--outline button--circle cart__item-count-plus"
         >
-          <PlusSvg/>
+          <PlusSvg />
         </button>
       </div>
       <div className="cart__item-price">
@@ -69,7 +76,7 @@ const CartItemBlock: React.FC<CartItemProps> = ({ id, title, type, price, size, 
       </div>
       <div className="cart__item-remove">
         <div onClick={onClickRemove} className="button button--outline button--circle">
-          <PlusSvg/>
+          <PlusSvg />
         </div>
       </div>
     </div>
