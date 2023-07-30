@@ -4,7 +4,7 @@
 
 ---
 
-### [>>>> View the project <<<<](https://react-pizza-dmytro-kuts.vercel.app/)
+### [>>>> View the project <<<<](https://pizza-project-ivory.vercel.app/)
 
 ###### Description
 
