@@ -1,0 +1,397 @@
+[
+  {
+  "id": "0",
+  "imageUrl": "./assets/img/products/pizza-0.png",
+  "title": "Пепероні Фреш з перцем",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 173,
+  "category": 1,
+  "rating": 4
+  },
+  {
+  "id": "1",
+  "imageUrl": "./assets/img/products/pizza-1.png",
+  "title": "Сирна",
+  "types": [
+    0
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 194,
+  "category": 3,
+  "rating": 6
+  },
+  {
+  "id": "2",
+  "imageUrl": "./assets/img/products/pizza-2.png",
+  "title": "Курча барбекю",
+  "types": [
+    0
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 245,
+  "category": 1,
+  "rating": 4
+  },
+  {
+  "id": "3",
+  "imageUrl": "./assets/img/products/pizza-3.png",
+  "title": "Кисло-солодке курча",
+  "types": [
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 263,
+  "category": 2,
+  "rating": 2
+  },
+  {
+  "id": "4",
+  "imageUrl": "./assets/img/products/pizza-4.png",
+  "title": "Чізбургер-піца",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 263,
+  "category": 3,
+  "rating": 8
+  },
+  {
+  "id": "5",
+  "imageUrl": "./assets/img/products/pizza-5.png",
+  "title": "Крейзі пепероні",
+  "types": [
+    0
+  ],
+  "sizes": [
+    30,
+    40
+  ],
+  "price": 273,
+  "category": 1,
+  "rating": 2
+  },
+  {
+  "id": "6",
+  "imageUrl": "./assets/img/products/pizza-6.png",
+  "title": "Пепероні",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 284,
+  "category": 1,
+  "rating": 9
+  },
+  {
+  "id": "7",
+  "imageUrl": "./assets/img/products/pizza-7.png",
+  "title": "Маргарита",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 160,
+  "category": 4,
+  "rating": 10
+  },
+  {
+  "id": "8",
+  "imageUrl": "./assets/img/products/pizza-8.png",
+  "title": "Чотири сезони",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 274,
+  "category": 5,
+  "rating": 10
+  },
+  {
+  "id": "9",
+  "imageUrl": "./assets/img/products/pizza-9.png",
+  "title": "Овочі та гриби 🌱",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 285,
+  "category": 5,
+  "rating": 7
+  },
+  {
+  "id": "10",
+  "imageUrl": "./assets/img/products/pizza-10.png",
+  "title": "Шинка та гриби",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 248,
+  "category": 5,
+  "rating": 7
+  },
+  {
+  "id": "11",
+  "imageUrl": "./assets/img/products/pizza-11.png",
+  "title": "Шинка та сир",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 224,
+  "category": 4,
+  "rating": 6
+  },
+  {
+  "id": "12",
+  "imageUrl": "./assets/img/products/pizza-12.png",
+  "title": "Гавайська",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 264,
+  "category": 4,
+  "rating": 6
+  },
+  {
+  "id": "13",
+  "imageUrl": "./assets/img/products/pizza-13.png",
+  "title": "Подвійне курча",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 184,
+  "category": 6,
+  "rating": 8
+  },
+  {
+  "id": "14",
+  "imageUrl": "./assets/img/products/pizza-14.png",
+  "title": "Сільська",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 154,
+  "category": 7,
+  "rating": 5
+  },
+  {
+  "id": "15",
+  "imageUrl": "./assets/img/products/pizza-15.png",
+  "title": "Домашня",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 174,
+  "category": 7,
+  "rating": 5
+  },
+  {
+  "id": "16",
+  "imageUrl": "./assets/img/products/pizza-16.png",
+  "title": "Італійська",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 234,
+  "category": 5,
+  "rating": 8
+  },
+  {
+  "id": "17",
+  "imageUrl": "./assets/img/products/pizza-17.png",
+  "title": "Ковбаски Барбекю",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 294,
+  "category": 2,
+  "rating": 9
+  },
+  {
+  "id": "18",
+  "imageUrl": "./assets/img/products/pizza-18.png",
+  "title": "М'ясна",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 279,
+  "category": 2,
+  "rating": 9
+  },
+  {
+  "id": "19",
+  "imageUrl": "./assets/img/products/pizza-19.png",
+  "title": "М'ясний мікс",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 299,
+  "category": 2,
+  "rating": 9
+  },
+  {
+  "id": "20",
+  "imageUrl": "./assets/img/products/pizza-20.png",
+  "title": "Пепероні фреш",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 312,
+  "category": 3,
+  "rating": 9
+  },
+  {
+  "id": "21",
+  "imageUrl": "./assets/img/products/pizza-21.png",
+  "title": "Курча ранч",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 252,
+  "category": 3,
+  "rating": 8
+  },
+  {
+  "id": "22",
+  "imageUrl": "./assets/img/products/pizza-22.png",
+  "title": "Чотири сири",
+  "types": [
+    0,
+    1
+  ],
+  "sizes": [
+    26,
+    30,
+    40
+  ],
+  "price": 252,
+  "category": 6,
+  "rating": 10
+  },
+  {
+  "id": "23",
+  "imageUrl": "./assets/img/products/pizza-23.png",
+  "title": "Чорізо фреш",
+  "types": [
+    0
+  ],
+  "sizes": [
+    26,
+    40
+  ],
+  "price": 162,
+  "category": 4,
+  "rating": 6
+  }
+]
